@@ -1,0 +1,40 @@
+#gh-ticker
+{
+    background-color: red;
+}
+
+#gh-ticker ul
+{
+    list-style: none;
+    padding: 0.5em;
+    height: 3.2em;
+}
+
+#gh-ticker ul, #gh-ticker li
+{
+    overflow: hidden;
+}
+
+#gh-ticker li
+{
+    height: 100%;
+}
+
+#gh-ticker li .dateline
+{
+    font-size: 75%;
+    text-align: right;
+}
+
+#gh-ticker .comment
+{
+    font-size: 75%;
+}
+
+#gh-ticker .action, #gh-ticker .comment
+{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
