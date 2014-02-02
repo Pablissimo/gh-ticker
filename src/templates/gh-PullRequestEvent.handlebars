@@ -1,0 +1,10 @@
+<span class="action">
+    {{#ifeq payload.action "opened"}}Opened{{/ifeq}}
+    {{#ifeq payload.action "closed"}}Closed{{/ifeq}}
+    {{#ifeq payload.action "synchronize"}}Synchronised{{/ifeq}}
+    {{#ifeq payload.action "reopened"}}Re-opened{{/ifeq}}
+    &nbsp;a <a href="{{payload.pull_request.html_url}}">pull request</a> to <a href="{{repoUrl repo.name}}">{{repo.name}}</a>
+</span>
+{{#if payload.pull_request.body}}
+<span>{{payload.pull_request.body}}</span>
+{{/if}}

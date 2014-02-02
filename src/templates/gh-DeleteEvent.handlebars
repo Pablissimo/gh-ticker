@@ -1,0 +1,7 @@
+{{#ifeq payload.ref_type "branch"}}
+<span class="action">Deleted branch <a href="{{branchUrl repo.name payload.ref}}">{{payload.ref}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+{{/ifeq}}
+
+{{#ifeq payload.ref_type "tag"}}
+<span class="action">Deleted tag <a href="{{tagUrl repo.name payload.ref}}">{{payload.ref}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+{{/ifeq}}

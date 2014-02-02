@@ -1,0 +1,12 @@
+<ul>
+    {{#each items}}
+    <li id="gh-ticker-item-{{@index}}">
+        {{partialFor type}}
+        <div class="dateline">{{dateAndTime created_at}}</div>
+    </li>
+    {{else}}
+    <li>
+        No recent GitHub activity
+    </li>
+    {{/each}}
+</ul>

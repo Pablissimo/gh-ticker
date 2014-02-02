@@ -1,0 +1,1 @@
+handlebars -b -p ./ > ../js/gh-templates.js

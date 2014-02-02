@@ -1,0 +1,7 @@
+<span class="action">
+    Pushed {{payload.size}} {{pluralise payload.size "commit" "commits"}} to <a href="{{repoUrl repo.name}}">{{repo.name}}</a>
+</span>
+
+{{#if payload.commits.0.message}}
+<span class="comment">{{payload.commits.0.message}}</span>
+{{/if}}

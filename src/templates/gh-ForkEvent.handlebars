@@ -1,0 +1,4 @@
+<span class="action">Forked repository <a href="{{repoUrl repo.name}}">{{repo.name}}</a> to <a href="{{payload.forkee.html_url}}">{{payload.forkee.full_name}}</a></span>
+{{#if payload.forkee.description}}
+<span class="comment">{{payload.forkee.description}}</span>
+{{/if}}

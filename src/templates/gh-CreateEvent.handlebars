@@ -1,0 +1,14 @@
+{{#ifeq payload.ref_type "repository"}}
+    <span class="action">Created repository <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+    {{#if payload.description}}
+    <span class="comment">{{payload.description}}</span>
+    {{/if}}
+{{/ifeq}}
+
+{{#ifeq payload.ref_type "branch"}}
+<span class="action">Created branch <a href="{{branchUrl repo.name payload.ref}}">{{payload.ref}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+{{/ifeq}}
+
+{{#ifeq payload.ref_type "tag"}}
+<span class="action">Created tag <a href="{{tagUrl repo.name payload.ref}}">{{payload.ref}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+{{/ifeq}}
