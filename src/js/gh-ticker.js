@@ -92,8 +92,7 @@ $(function () {
         $('#gh-ticker-item-' + id).show();
     }
 
-    var onSuccess = function (data)
-    {
+    var onSuccess = function (data) {
         itemCount = data.data.length;
         var tickerElement = $('#gh-ticker');
 
@@ -106,8 +105,7 @@ $(function () {
                 mouseOver = false;
             });
 
-        window.setInterval(function ()
-        {
+        window.setInterval(function () {
             if (!mouseOver) {
                 currentItemIndex = (currentItemIndex + 1) % itemCount;
                 ShowItem(currentItemIndex);
