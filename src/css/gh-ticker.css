@@ -14,7 +14,8 @@
 {
     height: 3.2em;
     margin: 0.5em;
-    position: relative;
+    position: relative;    
+    background: url('../img/GitHub_Logo.png') no-repeat right top;
 }
 
 #gh-ticker li .dateline
@@ -24,6 +25,12 @@
     position: absolute;
     right: 0;
     bottom: 0;
+}
+
+/* Remove rule if you're not using the GH image */
+#gh-ticker .action
+{
+    margin-right: 50px;
 }
 
 #gh-ticker .comment
