@@ -1,6 +1,6 @@
 gh-ticker is a simplistic client-side ticker of your GitHub public activity that you can drop into your site.
 
-<img src="https://raw.github.com/Pablissimo/gh-ticker/master/screenshot.png" alt="gh-ticker in action" />
+<a href="http://pablissimo.com"><img src="https://raw.github.com/Pablissimo/gh-ticker/master/screenshot.png" alt="gh-ticker in action" /></a>
 
 ## Getting started
 You'll need to:
