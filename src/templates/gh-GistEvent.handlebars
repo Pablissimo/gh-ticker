@@ -1,0 +1,6 @@
+<span class="action">{{capitalise payload.action}}d gist <a href="{{payload.gist.html_url}}">{{payload.gist.id}}</a></span>
+{{#if payload.gist.description}}
+<span class="comment">
+{{payload.gist.description}}
+</span>
+{{/if}}

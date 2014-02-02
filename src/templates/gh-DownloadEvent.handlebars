@@ -1,0 +1,4 @@
+<span class="action">Created new download <a href="{{payload.download.html_url}}">{{payload.download.name}}</a> for <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+{{#if payload.download.description}}
+<span class="comment">{{payload.download.description}}</span>
+{{/if}}

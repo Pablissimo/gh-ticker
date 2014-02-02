@@ -1,0 +1,11 @@
+<span class="action">
+  Followed
+  {{#if payload.target.name}}
+  <a href="{{payload.target.html_url}}">{{payload.target.name}} ({{payload.target.login}})</a>
+  {{else}}
+  <a href="{{payload.target.html_url}}">{{payload.target.login}}</a>
+  {{/if}}
+</span>
+{{#if payload.target.bio}}
+<span class="comment">{{payload.target.bio}}</span>
+{{/if}}

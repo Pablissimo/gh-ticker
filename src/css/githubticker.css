@@ -1,8 +1,3 @@
-#gh-ticker
-{
-    background-color: red;
-}
-
 #gh-ticker ul
 {
     list-style: none;
@@ -12,7 +7,7 @@
 
 #gh-ticker ul, #gh-ticker li
 {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #gh-ticker li
