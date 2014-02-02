@@ -1,3 +1,20 @@
+Handlebars.registerHelper('branchUrl', function (a, b, options) {
+    return 'https://github.com/' + a + '/tree/' + b;
+});
+
+Handlebars.registerHelper('capitalise', function (a, options) {
+    return a.charAt(0).toUpperCase() + a.slice(1);
+});
+
+Handlebars.registerHelper('commitIdShort', function (a, options) {
+    return a.substring(0, 7);
+});
+
+Handlebars.registerHelper('dateAndTime', function (a, options) {
+    var date = new Date(a);
+    return date.toLocaleDateString() + " @ " + date.toLocaleTimeString();
+});
+
 // http://stackoverflow.com/a/21072419/677173
 Handlebars.registerHelper('ifeq', function (a, b, options) {
     if (a === b) {
@@ -27,10 +44,6 @@ Handlebars.registerHelper('pluralise', function (a, singular, plural, options) {
     }
 });
 
-Handlebars.registerHelper('capitalise', function (a, options) {
-    return a.charAt(0).toUpperCase() + a.slice(1);
-});
-
 Handlebars.registerHelper('repoUrl', function (a, options) {
     return 'https://github.com/' + a;
 });
@@ -39,21 +52,8 @@ Handlebars.registerHelper('tagUrl', function (a, b, options) {
     return 'https://github.com/' + a + '/tree/' + b;
 });
 
-Handlebars.registerHelper('branchUrl', function (a, b, options) {
-    return 'https://github.com/' + a + '/tree/' + b;
-});
-
 Handlebars.registerHelper('wikiUrl', function (a, options) {
     return 'https://github.com/' + a + '/wiki';
-});
-
-Handlebars.registerHelper('commitIdShort', function (a, options) {
-    return a.substring(0, 7);
-});
-
-Handlebars.registerHelper('dateAndTime', function (a, options) {
-    var date = new Date(a);
-    return date.toLocaleDateString() + " @ " + date.toLocaleTimeString();
 });
 
 $(function () {
