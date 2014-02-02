@@ -28,6 +28,11 @@
             </ul>
         </script>
 
+        <script type="text/x-handlebars-template" id="gh-ticker-CommitCommentEvent-partial">
+            <span class="action">Commented on <a href="{{payload.comment.html_url}}">commit {{commitIdShort payload.comment.commit_id}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+            <span class="comment">{{payload.comment.body}}}</span>
+        </script>
+
         <script type="text/x-handlebars-template" id="gh-ticker-CreateEvent-partial">
             {{#ifeq payload.ref_type "repository"}}
                 <span class="action">Created repository <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
@@ -42,6 +47,16 @@
 
             {{#ifeq payload.ref_type "tag"}}
             <span class="action">Created tag <a href="{{tagUrl repo.name payload.ref}}">{{payload.ref}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+            {{/ifeq}}
+        </script>
+
+        <script type="text/x-handlebars-template" id="gh-ticker-DeleteEvent-partial">
+            {{#ifeq payload.ref_type "branch"}}
+            <span class="action">Deleted branch <a href="{{branchUrl repo.name payload.ref}}">{{payload.ref}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+            {{/ifeq}}
+
+            {{#ifeq payload.ref_type "tag"}}
+            <span class="action">Deleted tag <a href="{{tagUrl repo.name payload.ref}}">{{payload.ref}}</a> at <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
             {{/ifeq}}
         </script>
 
@@ -67,14 +82,26 @@
             {{/if}}
         </script>
 
+        <script type="text/x-handlebars-template" id="gh-ticker-GollumEvent-partial">
+            <span class="action">Updated {{payload.pages.length}} {{pluralise payload.pages.length "page" "pages"}} on the <a href="{{wikiUrl repo.name}}">{{repo.name}} wiki</a></span>
+        </script>
+
         <script type="text/x-handlebars-template" id="gh-ticker-IssueCommentEvent-partial">
-            <span class="action">Commented on issue <a href="{{payload.issue.html_url}}">{{repo.name}}#{{payload.issue.number}}</a> - {{payload.issue.title}}</span>
+            <span class="action">Commented on <a href="{{payload.issue.html_url}}">issue {{repo.name}}#{{payload.issue.number}}</a> - {{payload.issue.title}}</span>
             <span class="comment">{{payload.comment.body}}</span>
         </script>
 
         <script type="text/x-handlebars-template" id="gh-ticker-IssuesEvent-partial">
-            <span class="action">{{capitalise payload.action}} issue <a href="{{payload.issue.html_url}}">{{repo.name}}#{{payload.issue.number}}</a></span>
+            <span class="action">{{capitalise payload.action}} <a href="{{payload.issue.html_url}}">issue {{repo.name}}#{{payload.issue.number}}</a></span>
             <span class="comment">{{payload.issue.title}}</span>
+        </script>
+
+        <script type="text/x-handlebars-template" id="gh-ticker-MemberEvent-partial">
+            <span class="action">Became a contributor to <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+        </script>
+
+        <script type="text/x-handlebars-template" id="gh-ticker-PublicEvent-partial">
+            <span class="action">Made <a href="{{repoUrl repo.name}}">{{repo.name}}</a> a public repository</span>
         </script>
 
         <script type="text/x-handlebars-template" id="gh-ticker-PullRequestEvent-partial">
@@ -91,7 +118,7 @@
         </script>
 
         <script type="text/x-handlebars-template" id="gh-ticker-PullRequestReviewCommentEvent-partial">
-            <span class="action"><a href="{{payload.comment.html_url}}">Commented on a pull request</a> to <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+            <span class="action">Commented on a <a href="{{payload.comment.html_url}}">pull request</a> to <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
             <span class="comment">{{payload.comment.body}}</span>
         </script>
 
@@ -105,5 +132,15 @@
             {{/if}}
         </script>
 
+        <script type="text/x-handlebars-template" id="gh-ticker-ReleaseEvent-partial">
+            <span class="action">Created a new release for <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+            {{#if payload.body}}
+            <span class="comment">{{payload.body}}</span>
+            {{/if}}
+        </script>
+
+        <script type="text/x-handlebars-template" id="gh-ticker-WatchEvent-partial">
+            <span class="action">Starred <a href="{{repoUrl repo.name}}">{{repo.name}}</a></span>
+        </script>
     </body>
 </html>

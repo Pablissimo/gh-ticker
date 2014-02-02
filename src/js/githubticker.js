@@ -69,12 +69,37 @@ $(function () {
         return 'https://github.com/' + a + '/tree/' + b;
     });
 
+    Handlebars.registerHelper('wikiUrl', function (a, options) {
+        return 'https://github.com/' + a + '/wiki';
+    });
+
+    Handlebars.registerHelper('commitIdShort', function (a, options) {
+        return a.substring(0, 7);
+    });
+
     Handlebars.registerHelper('dateAndTime', function (a, options) {
         var date = new Date(a);
         return date.toLocaleDateString() + " @ " + date.toLocaleTimeString();
     });
 
-    var partials = ['IssuesEvent', 'IssueCommentEvent', 'PushEvent', 'PullRequestEvent', 'PullRequestReviewCommentEvent', 'CreateEvent', 'ForkEvent', 'FollowEvent'];
+    var partials =
+    [
+        'CommitCommentEvent',
+        'CreateEvent',
+        'DeleteEvent',
+        'FollowEvent',
+        'ForkEvent',
+        'GollumEvent',
+        'IssueCommentEvent',
+        'IssuesEvent',
+        'MemberEvent',
+        'PublicEvent',
+        'PullRequestEvent',
+        'PullRequestReviewCommentEvent',
+        'PushEvent',
+        'ReleaseEvent',
+        'WatchEvent',
+    ];
 
     partials.forEach(function (partial) {
         var p = $('#gh-ticker-' + partial + '-partial').html();
