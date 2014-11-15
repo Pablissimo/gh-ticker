@@ -379,7 +379,7 @@ function program7(depth0,data) {
 function program9(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\r\n<span>"
+  buffer += "\r\n<span class=\"comment\">"
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.payload)),stack1 == null || stack1 === false ? stack1 : stack1.pull_request)),stack1 == null || stack1 === false ? stack1 : stack1.body)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</span>\r\n";
   return buffer;

@@ -6,5 +6,5 @@
     &nbsp;a <a href="{{payload.pull_request.html_url}}">pull request</a> to <a href="{{repoUrl repo.name}}">{{repo.name}}</a>
 </span>
 {{#if payload.pull_request.body}}
-<span>{{payload.pull_request.body}}</span>
+<span class="comment">{{payload.pull_request.body}}</span>
 {{/if}}
